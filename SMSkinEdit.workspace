@@ -2,5 +2,6 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="SMSkinEdit">
 		<Project filename="submodules/FreeGLUT/FreeGLUT.cbp" />
+		<Project filename="submodules/lodepng/lodepng.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
