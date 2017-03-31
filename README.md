@@ -7,6 +7,6 @@ This project contains three submodules so remember to do the following at least 
 `git pull --recurse-submodules # I've made minor edits`
 
 ### Listing
-- github.com/dcnieho/FreeGLUT.git
-- github.com/cemyuksel/cycodebase.git
-- github.com/lvandeve/lodepng.git
+- [FreeGlut](github.com/dcnieho/FreeGLUT.git)
+- [CyCodeBase](github.com/cemyuksel/cycodebase.git)
+- [lodepng](github.com/lvandeve/lodepng.git)
