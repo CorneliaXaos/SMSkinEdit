@@ -2,22 +2,22 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="FreeGLUT" />
+		<Option title="FLTK" />
 		<Option makefile_is_custom="1" />
-		<Option execution_dir="FreeGLUT/freeglut/freeglut" />
+		<Option execution_dir="FLTK" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<MakeCommands>
-			<Build command="$make -f $makefile freeglut" />
+			<Build command="$make -f $makefile" />
 			<CompileFile command="$make -f $makefile $file" />
 			<Clean command="$make -f $makefile clean" />
 			<DistClean command="$make -f $makefile distclean$target" />
-			<AskRebuildNeeded command="$make -q -f $makefile freeglut" />
-			<SilentBuild command="$make -f $makefile freeglut &gt; $(CMD_NULL)" />
+			<AskRebuildNeeded command="$make -q -f $makefile" />
+			<SilentBuild command="$make -f $makefile &gt; $(CMD_NULL)" />
 		</MakeCommands>
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/FreeGLUT" prefix_auto="1" extension_auto="1" />
+				<Option output="FLTK" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -25,20 +25,20 @@
 					<Add option="-g" />
 				</Compiler>
 				<ExtraCommands>
-					<Add before="cmake . -DCMAKE_BUILD_TYPE=Debug -DFREEGLUT_BUILD_DEMOS=OFF -DFREEGLUT_BUILD_SHARED_LIBS=ON -DFREEGLUT_PRINT_ERRORS=ON -DFREEGLUT_PRINT_WARNINGS=ON -DCMAKE_INSTALL_PREFIX=../../../bin/debug/" />
+					<Add before="cmake . -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../bin/debug/ -DOPTION_BUILD_EXAMPLES=OFF" />
 					<Mode after="always" />
 				</ExtraCommands>
 				<MakeCommands>
-					<Build command="$make install -f $makefile freeglut" />
+					<Build command="$make install -f $makefile" />
 					<CompileFile command="$make -f $makefile $file" />
 					<Clean command="$make -f $makefile clean" />
 					<DistClean command="$make -f $makefile distclean$target" />
-					<AskRebuildNeeded command="$make -q -f $makefile freeglut" />
-					<SilentBuild command="$make install -f $makefile freeglut &gt; $(CMD_NULL)" />
+					<AskRebuildNeeded command="$make -q -f $makefile" />
+					<SilentBuild command="$make install -f $makefile &gt; $(CMD_NULL)" />
 				</MakeCommands>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/FreeGLUT" prefix_auto="1" extension_auto="1" />
+				<Option output="FLTK" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -49,16 +49,16 @@
 					<Add option="-s" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="cmake . -DCMAKE_BUILD_TYPE=Release -DFREEGLUT_BUILD_DEMOS=OFF -DFREEGLUT_BUILD_SHARED_LIBS=ON -DFREEGLUT_PRINT_ERRORS=OFF -DFREEGLUT_PRINT_WARNINGS=OFF -DCMAKE_INSTALL_PREFIX=../../../bin/release/" />
+					<Add before="cmake . -DCMAKE_BUILD_TYPE=Release  -DCMAKE_INSTALL_PREFIX=../bin/release/ -DOPTION_BUILD_EXAMPLES=OFF" />
 					<Mode after="always" />
 				</ExtraCommands>
 				<MakeCommands>
-					<Build command="$make install -f $makefile freeglut" />
+					<Build command="$make install -f $makefile" />
 					<CompileFile command="$make -f $makefile $file" />
 					<Clean command="$make -f $makefile clean" />
 					<DistClean command="$make -f $makefile distclean$target" />
-					<AskRebuildNeeded command="$make -q -f $makefile freeglut" />
-					<SilentBuild command="$make install -f $makefile freeglut &gt; $(CMD_NULL)" />
+					<AskRebuildNeeded command="$make -q -f $makefile" />
+					<SilentBuild command="$make install -f $makefile &gt; $(CMD_NULL)" />
 				</MakeCommands>
 			</Target>
 		</Build>
