@@ -86,6 +86,7 @@
 			<Add after="cp ./data/. $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
 			<Mode after="always" />
 		</ExtraCommands>
+		<Unit filename="implementation/gl/GLProgramBundle.cpp" />
 		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/MenuBarWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/ModelSelectorWidget.cpp" />
@@ -97,6 +98,7 @@
 		<Unit filename="implementation/gui/windows/subwindows/GL_ModelWindow.cpp" />
 		<Unit filename="implementation/gui/windows/subwindows/GL_TextureWindow.cpp" />
 		<Unit filename="implementation/main.cpp" />
+		<Unit filename="interface/gl/GLProgramBundle.h" />
 		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />
 		<Unit filename="interface/gui/widgets/MenuBarWidget.h" />
 		<Unit filename="interface/gui/widgets/ModelSelectorWidget.h" />
