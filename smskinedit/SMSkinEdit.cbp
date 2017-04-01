@@ -9,7 +9,7 @@
 			<Target title="Debug">
 				<Option output="bin/Debug/SMSkinEdit" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-pg" />
@@ -30,7 +30,7 @@
 			<Target title="Release">
 				<Option output="bin/Release/SMSkinEdit" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fexpensive-optimizations" />
@@ -74,10 +74,39 @@
 			<Add option="-std=c++11" />
 			<Add option="-m64" />
 			<Add directory="../submodules/lodepng/lodepng" />
+			<Add directory="interface" />
+			<Add directory="../submodules/cycodebase" />
 		</Compiler>
 		<Linker>
 			<Add option="-m64" />
 		</Linker>
+		<ExtraCommands>
+			<Add before="rm -R $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
+			<Add after="mkdir $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
+			<Add after="cp ./data/. $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
+			<Mode after="always" />
+		</ExtraCommands>
+		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
+		<Unit filename="implementation/gui/widgets/MenuBarWidget.cpp" />
+		<Unit filename="implementation/gui/widgets/ModelSelectorWidget.cpp" />
+		<Unit filename="implementation/gui/widgets/OnionSkinningWidget.cpp" />
+		<Unit filename="implementation/gui/widgets/TextureSelectorWidget.cpp" />
+		<Unit filename="implementation/gui/windows/EditorWindow.cpp" />
+		<Unit filename="implementation/gui/windows/MainWindow.cpp" />
+		<Unit filename="implementation/gui/windows/ModelWindow.cpp" />
+		<Unit filename="implementation/gui/windows/subwindows/GL_ModelWindow.cpp" />
+		<Unit filename="implementation/gui/windows/subwindows/GL_TextureWindow.cpp" />
+		<Unit filename="implementation/main.cpp" />
+		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />
+		<Unit filename="interface/gui/widgets/MenuBarWidget.h" />
+		<Unit filename="interface/gui/widgets/ModelSelectorWidget.h" />
+		<Unit filename="interface/gui/widgets/OnionSkinningWidget.h" />
+		<Unit filename="interface/gui/widgets/TextureSelectorWidget.h" />
+		<Unit filename="interface/gui/windows/EditorWindow.h" />
+		<Unit filename="interface/gui/windows/MainWindow.h" />
+		<Unit filename="interface/gui/windows/ModelWindow.h" />
+		<Unit filename="interface/gui/windows/subwindows/GL_ModelWindow.h" />
+		<Unit filename="interface/gui/windows/subwindows/GL_TextureWindow.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
