@@ -14,16 +14,11 @@
 				<Compiler>
 					<Add option="-pg" />
 					<Add option="-g" />
-					<Add directory="../submodules/FLTK/bin/debug/include/FL" />
+					<Add directory="../submodules/FLTK/bin/debug/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-pg" />
-					<Add library="../submodules/FLTK/bin/debug/lib/libfltk.a" />
-					<Add library="../submodules/FLTK/bin/debug/lib/libfltk_forms.a" />
-					<Add library="../submodules/FLTK/bin/debug/lib/libfltk_gl.a" />
-					<Add library="../submodules/FLTK/bin/debug/lib/libfltk_images.a" />
-					<Add library="../submodules/FLTK/bin/debug/lib/libfltk_jpeg.a" />
-					<Add library="../submodules/FLTK/bin/debug/lib/libfltk_png.a" />
+					<Add option="`../submodules/FLTK/bin/debug/bin/fltk-config --use-gl --ldlibs`" />
 					<Add library="../submodules/lodepng/bin/Debug/liblodepng.a" />
 				</Linker>
 			</Target>
@@ -35,16 +30,11 @@
 				<Compiler>
 					<Add option="-fexpensive-optimizations" />
 					<Add option="-O3" />
-					<Add directory="../submodules/FLTK/bin/release/include/FL" />
+					<Add directory="../submodules/FLTK/bin/release/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="../submodules/FLTK/bin/release/lib/libfltk.a" />
-					<Add library="../submodules/FLTK/bin/release/lib/libfltk_forms.a" />
-					<Add library="../submodules/FLTK/bin/release/lib/libfltk_gl.a" />
-					<Add library="../submodules/FLTK/bin/release/lib/libfltk_images.a" />
-					<Add library="../submodules/FLTK/bin/release/lib/libfltk_jpeg.a" />
-					<Add library="../submodules/FLTK/bin/release/lib/libfltk_png.a" />
+					<Add option="`../submodules/FLTK/bin/release/bin/fltk-config --use-gl --ldlibs`" />
 					<Add library="../submodules/lodepng/bin/Release/liblodepng.a" />
 				</Linker>
 			</Target>
@@ -81,9 +71,9 @@
 			<Add option="-m64" />
 		</Linker>
 		<ExtraCommands>
-			<Add before="rm -R $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
-			<Add after="mkdir $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
-			<Add after="cp ./data/. $(TARGET_OUTPUT_DIR)/SMSkinEdit" />
+			<Add before="rm -rfd $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
+			<Add after="mkdir $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
+			<Add after="cp -r ./data/. $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="implementation/gl/GLProgramBundle.cpp" />
