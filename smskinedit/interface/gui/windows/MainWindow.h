@@ -7,6 +7,9 @@
 namespace smskinedit {
     namespace gui {
 
+        //! Forward Declare ModeWindow
+        class ModelWindow;
+
         /**
          *  @brief The Main window of our application.
          *
@@ -15,10 +18,14 @@ namespace smskinedit {
         class MainWindow : public Fl_Double_Window {
 
             public:
+                //! Constructs a MainWindow
                 MainWindow();
                 ~MainWindow();
             private:
-                // None, atm
+                // MenuBarWidget* _menuBar;
+                ModelWindow* _modelWindow;
+                // EditorWindow* _editorWindow;
+
         };
 
     }

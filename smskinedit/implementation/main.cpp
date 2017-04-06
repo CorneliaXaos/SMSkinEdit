@@ -3,6 +3,7 @@
 #include <FL/Fl.H>
 
 #include "gui/windows/MainWindow.h"
+#include "gui/windows/subwindows/GLModelWindow.h"
 
 using MainWindow = smskinedit::gui::MainWindow;
 

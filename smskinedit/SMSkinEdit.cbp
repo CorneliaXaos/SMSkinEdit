@@ -69,6 +69,7 @@
 		</Compiler>
 		<Linker>
 			<Add option="-m64" />
+			<Add option="-lGLEW" />
 		</Linker>
 		<ExtraCommands>
 			<Add before="rm -rfd $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
@@ -83,22 +84,25 @@
 		<Unit filename="implementation/gui/widgets/OnionSkinningWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/TextureSelectorWidget.cpp" />
 		<Unit filename="implementation/gui/windows/EditorWindow.cpp" />
+		<Unit filename="implementation/gui/windows/GLCommon.cpp" />
 		<Unit filename="implementation/gui/windows/MainWindow.cpp" />
 		<Unit filename="implementation/gui/windows/ModelWindow.cpp" />
-		<Unit filename="implementation/gui/windows/subwindows/GL_ModelWindow.cpp" />
-		<Unit filename="implementation/gui/windows/subwindows/GL_TextureWindow.cpp" />
+		<Unit filename="implementation/gui/windows/subwindows/GLModelWindow.cpp" />
+		<Unit filename="implementation/gui/windows/subwindows/GLTextureWindow.cpp" />
 		<Unit filename="implementation/main.cpp" />
 		<Unit filename="interface/gl/GLProgramBundle.h" />
+		<Unit filename="interface/gui/constants.h" />
 		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />
 		<Unit filename="interface/gui/widgets/MenuBarWidget.h" />
 		<Unit filename="interface/gui/widgets/ModelSelectorWidget.h" />
 		<Unit filename="interface/gui/widgets/OnionSkinningWidget.h" />
 		<Unit filename="interface/gui/widgets/TextureSelectorWidget.h" />
 		<Unit filename="interface/gui/windows/EditorWindow.h" />
+		<Unit filename="interface/gui/windows/GLCommon.h" />
 		<Unit filename="interface/gui/windows/MainWindow.h" />
 		<Unit filename="interface/gui/windows/ModelWindow.h" />
-		<Unit filename="interface/gui/windows/subwindows/GL_ModelWindow.h" />
-		<Unit filename="interface/gui/windows/subwindows/GL_TextureWindow.h" />
+		<Unit filename="interface/gui/windows/subwindows/GLModelWindow.h" />
+		<Unit filename="interface/gui/windows/subwindows/GLTextureWindow.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
