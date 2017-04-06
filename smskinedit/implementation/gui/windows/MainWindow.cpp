@@ -13,9 +13,7 @@ namespace smskinedit {
 
         // Constructors / Destructor
         MainWindow::MainWindow() : Fl_Double_Window{WIDTH, HEIGHT, TITLE} {}
-        MainWindow::~MainWindow() {
-
-        }
+        MainWindow::~MainWindow() {}
 
     }
 }
