@@ -4,6 +4,8 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Double_Window.H>
 
+#include "gui/widgets/ModelSelectorWidget.h"
+
 //! Forward declare Fl_Value_Slider
 class Fl_Hor_Value_Slider;
 
@@ -37,7 +39,7 @@ namespace smskinedit {
                 int handle(int) override final;
 
             private:
-                // ModelSelectorWidget* _selector;
+                ModelSelectorWidget* _selector;
                 GLModelWindow* _modelWindow;
                 Fl_Hor_Value_Slider* _onionSkinningSlider;
         };
