@@ -1,7 +1,7 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Group.H>
-#include <FL/Fl_Round_Button.H>
+#include <FL/Fl_Radio_Round_Button.H>
 
 #include "gui/widgets/ModelSelectorWidget.h"
 
@@ -31,19 +31,23 @@ namespace smskinedit {
             _selectorLabel->align(FL_ALIGN_INSIDE | FL_ALIGN_RIGHT);
 
             // Init _radioButtonBody
-            _radioButtonBody = new Fl_Round_Button{x + childWidth, y,
+            _radioButtonBody = new Fl_Radio_Round_Button{x + childWidth, y,
                     childWidth, height, labelBody};
             _radioButtonBody->visible_focus(false);
+            _radioButtonBody->box(FL_THIN_DOWN_BOX);
+            _radioButtonBody->setonly();
 
             // Init _radioButtonHead
-            _radioButtonHead = new Fl_Round_Button{x + childWidth * 2, y,
+            _radioButtonHead = new Fl_Radio_Round_Button{x + childWidth * 2, y,
                     childWidth, height, labelHead};
             _radioButtonHead->visible_focus(false);
+            _radioButtonHead->box(FL_THIN_DOWN_BOX);
 
             // Init _radioButtonBoth
-            _radioButtonBoth = new Fl_Round_Button{x + childWidth * 3, y,
+            _radioButtonBoth = new Fl_Radio_Round_Button{x + childWidth * 3, y,
                     childWidth, height, labelBoth};
             _radioButtonBoth->visible_focus(false);
+            _radioButtonBoth->box(FL_THIN_DOWN_BOX);
 
             // Finish Up
             end();

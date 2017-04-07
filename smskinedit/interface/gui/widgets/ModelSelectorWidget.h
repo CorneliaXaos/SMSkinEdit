@@ -4,7 +4,7 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Group.H>
-#include <FL/Fl_Round_Button.H>
+#include <FL/Fl_Radio_Round_Button.H>
 
 namespace smskinedit {
     namespace gui {
@@ -28,9 +28,9 @@ namespace smskinedit {
 
             private:
                 Fl_Box* _selectorLabel;
-                Fl_Round_Button* _radioButtonBody;
-                Fl_Round_Button* _radioButtonHead;
-                Fl_Round_Button* _radioButtonBoth;
+                Fl_Radio_Round_Button* _radioButtonBody;
+                Fl_Radio_Round_Button* _radioButtonHead;
+                Fl_Radio_Round_Button* _radioButtonBoth;
         };
 
     }

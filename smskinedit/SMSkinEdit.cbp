@@ -81,7 +81,6 @@
 		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/MenuBarWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/ModelSelectorWidget.cpp" />
-		<Unit filename="implementation/gui/widgets/OnionSkinningWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/TextureSelectorWidget.cpp" />
 		<Unit filename="implementation/gui/windows/EditorWindow.cpp" />
 		<Unit filename="implementation/gui/windows/GLCommon.cpp" />
@@ -95,7 +94,6 @@
 		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />
 		<Unit filename="interface/gui/widgets/MenuBarWidget.h" />
 		<Unit filename="interface/gui/widgets/ModelSelectorWidget.h" />
-		<Unit filename="interface/gui/widgets/OnionSkinningWidget.h" />
 		<Unit filename="interface/gui/widgets/TextureSelectorWidget.h" />
 		<Unit filename="interface/gui/windows/EditorWindow.h" />
 		<Unit filename="interface/gui/windows/GLCommon.h" />

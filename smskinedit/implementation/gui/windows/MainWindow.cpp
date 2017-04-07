@@ -2,6 +2,7 @@
 #include <FL/Fl_Double_Window.H>
 
 #include "gui/constants.h"
+#include "gui/widgets/MenuBarWidget.h"
 #include "gui/windows/MainWindow.h"
 #include "gui/windows/ModelWindow.h"
 
@@ -17,10 +18,11 @@ namespace smskinedit {
 
         // Constructors / Destructor
         MainWindow::MainWindow() : Fl_Double_Window{APPLICATION_WIDTH(),
-                APPLICATION_HEIGHT(), APPLICATION_TITLE},
+                APPLICATION_HEIGHT(), APPLICATION_TITLE}, _menuBar(nullptr),
                 _modelWindow(nullptr) {
             //// Init _menuBar
-
+            _menuBar = new MenuBarWidget{0, 0, APPLICATION_WIDTH(),
+                    ROW_HEIGHT()};
 
             //// Init _modelWindow
             _modelWindow = new ModelWindow{0, ROW_HEIGHT(),

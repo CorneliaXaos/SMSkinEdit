@@ -7,6 +7,8 @@
 namespace smskinedit {
     namespace gui {
 
+        //! Forward Declare MenuBarWidget
+        class MenuBarWidget;
         //! Forward Declare ModeWindow
         class ModelWindow;
 
@@ -22,7 +24,7 @@ namespace smskinedit {
                 MainWindow();
                 ~MainWindow();
             private:
-                // MenuBarWidget* _menuBar;
+                MenuBarWidget* _menuBar;
                 ModelWindow* _modelWindow;
                 // EditorWindow* _editorWindow;
 

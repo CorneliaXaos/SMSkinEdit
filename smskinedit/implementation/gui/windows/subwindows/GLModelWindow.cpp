@@ -9,7 +9,7 @@
     #include <GL/glew.h>
 #endif
 
-#include "gui/windows/GLCommon.h"
+#include "gui/GLCommon.h"
 #include "gui/windows/subwindows/GLModelWindow.h"
 
 namespace smskinedit {
