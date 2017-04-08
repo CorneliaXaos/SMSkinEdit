@@ -10,6 +10,6 @@ git pull --recurse-submodules # I've made minor edits
 ```
 
 ### Listing
-- [FreeGlut](github.com/dcnieho/FreeGLUT.git)
 - [CyCodeBase](github.com/cemyuksel/cycodebase.git)
+- [FLTK](github.com/IngwiePhoenix/FLTK.git)
 - [lodepng](github.com/lvandeve/lodepng.git)

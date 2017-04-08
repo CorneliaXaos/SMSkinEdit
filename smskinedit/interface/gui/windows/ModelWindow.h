@@ -4,16 +4,16 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Double_Window.H>
 
-#include "gui/widgets/ModelSelectorWidget.h"
-
 //! Forward declare Fl_Value_Slider
 class Fl_Hor_Value_Slider;
 
 namespace smskinedit {
     namespace gui {
 
-        //! Forward declar GLModelWindow
+        //! Forward declare GLModelWindow
         class GLModelWindow;
+        //! Forward declare ModelSelectorWidget
+        class ModelSelectorWidget;
 
         /**
          *  @brief The Model Window
@@ -29,7 +29,7 @@ namespace smskinedit {
                 ModelWindow(int, int, int, int);
                 ~ModelWindow();
 
-                // No copying or moving
+                //! No copying or moving
                 ModelWindow(const ModelWindow&) = delete;
                 ModelWindow& operator=(const ModelWindow&) = delete;
                 ModelWindow(ModelWindow&&) = delete;

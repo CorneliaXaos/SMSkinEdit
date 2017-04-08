@@ -11,6 +11,8 @@ namespace smskinedit {
         class MenuBarWidget;
         //! Forward Declare ModeWindow
         class ModelWindow;
+        //! Forward Declare EditorWindow
+        class EditorWindow;
 
         /**
          *  @brief The Main window of our application.
@@ -23,10 +25,17 @@ namespace smskinedit {
                 //! Constructs a MainWindow
                 MainWindow();
                 ~MainWindow();
+
+                //! no copying or moving
+                MainWindow(const MainWindow&) = delete;
+                MainWindow& operator=(const MainWindow&) = delete;
+                MainWindow(MainWindow&&) = delete;
+                MainWindow operator=(MainWindow&&) = delete;
+
             private:
                 MenuBarWidget* _menuBar;
                 ModelWindow* _modelWindow;
-                // EditorWindow* _editorWindow;
+                EditorWindow* _editorWindow;
 
         };
 

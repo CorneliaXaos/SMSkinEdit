@@ -2,9 +2,12 @@
 #define SMSKINEDIT_GUI_MODELSELECTORWIDGET_H
 
 #include <FL/Fl.H>
-#include <FL/Fl_Box.H>
 #include <FL/Fl_Group.H>
-#include <FL/Fl_Radio_Round_Button.H>
+
+//! Forward Declare Fl_Box
+class Fl_Box;
+//! Forward Declare Fl_Radio_Round_Button
+class Fl_Radio_Round_Button;
 
 namespace smskinedit {
     namespace gui {
@@ -20,6 +23,7 @@ namespace smskinedit {
                 ModelSelectorWidget(int, int, int, int);
                 ~ModelSelectorWidget();
 
+                //! No Copying or moving
                 ModelSelectorWidget(const ModelSelectorWidget&) = delete;
                 ModelSelectorWidget& operator=(const ModelSelectorWidget&)
                         = delete;

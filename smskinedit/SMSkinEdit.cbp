@@ -90,13 +90,13 @@
 		<Unit filename="implementation/gui/windows/subwindows/GLTextureWindow.cpp" />
 		<Unit filename="implementation/main.cpp" />
 		<Unit filename="interface/gl/GLProgramBundle.h" />
+		<Unit filename="interface/gui/GLCommon.h" />
 		<Unit filename="interface/gui/constants.h" />
 		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />
 		<Unit filename="interface/gui/widgets/MenuBarWidget.h" />
 		<Unit filename="interface/gui/widgets/ModelSelectorWidget.h" />
 		<Unit filename="interface/gui/widgets/TextureSelectorWidget.h" />
 		<Unit filename="interface/gui/windows/EditorWindow.h" />
-		<Unit filename="interface/gui/windows/GLCommon.h" />
 		<Unit filename="interface/gui/windows/MainWindow.h" />
 		<Unit filename="interface/gui/windows/ModelWindow.h" />
 		<Unit filename="interface/gui/windows/subwindows/GLModelWindow.h" />

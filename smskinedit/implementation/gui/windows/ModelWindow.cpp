@@ -3,10 +3,11 @@
 #include <FL/Fl_Hor_Value_Slider.H>
 
 #include "gui/constants.h"
-#include "gui/windows/GLCommon.h"
+#include "gui/widgets/ModelSelectorWidget.h"
 #include "gui/windows/ModelWindow.h"
 #include "gui/windows/subwindows/GLModelWindow.h"
 
+// Constants
 const int ONION_SKINNING_LABEL_PADDING = 5;
 const int ONION_SKINNING_LABEL_SIZE = 10;
 const int ONION_SKINNING_LABEL_TOTAL = ONION_SKINNING_LABEL_PADDING +
@@ -19,8 +20,8 @@ namespace smskinedit {
 
         // Constructors
         ModelWindow::ModelWindow(int x, int y, int width, int height) :
-                Fl_Double_Window{x, y, width, height}, _modelWindow(nullptr),
-                _onionSkinningSlider(nullptr) {
+                Fl_Double_Window{x, y, width, height}, _selector(nullptr),
+                _modelWindow(nullptr), _onionSkinningSlider(nullptr) {
             // Init self
             box(FL_THIN_DOWN_BOX);
 
@@ -38,6 +39,7 @@ namespace smskinedit {
             _onionSkinningSlider->labelsize(ONION_SKINNING_LABEL_SIZE);
             _onionSkinningSlider->align(FL_ALIGN_BOTTOM);
             _onionSkinningSlider->visible_focus(false);
+            _onionSkinningSlider->value(0.5);
 
             // Finish Up
             end();

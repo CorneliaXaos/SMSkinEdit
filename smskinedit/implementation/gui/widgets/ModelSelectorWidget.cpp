@@ -22,7 +22,6 @@ namespace smskinedit {
 
             // Init self & helpers
             box(FL_THIN_DOWN_BOX);
-
             int childWidth = width / 4;
 
             // Init _selectorLabel
@@ -70,5 +69,6 @@ namespace smskinedit {
                 _radioButtonBoth = nullptr;
             }
         }
+
     }
 }

@@ -23,8 +23,11 @@ namespace smskinedit {
                 MenuBarWidget& operator=(MenuBarWidget&&) = delete;
 
                 // TODO - enums and callback setters
+
+                //! Number of Menu Items
+                static const unsigned int MENU_ITEM_COUNT = 15;
             private:
-                Fl_Menu_Item items[15];
+                Fl_Menu_Item _items[MENU_ITEM_COUNT];
         };
 
     }

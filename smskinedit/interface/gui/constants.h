@@ -11,11 +11,11 @@ namespace smskinedit {
             constexpr const char* APPLICATION_TITLE = "StarMade Skin Editor";
 
             //! The total width of the application window
-            constexpr const int APPLICATION_WIDTH() {
+            constexpr int APPLICATION_WIDTH() {
                 return 1280;
             }
             //! The total height of the application window
-            constexpr const int APPLICATION_HEIGHT() {
+            constexpr int APPLICATION_HEIGHT() {
                 return 720;
             }
 
