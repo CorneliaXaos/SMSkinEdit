@@ -77,18 +77,24 @@
 			<Add after="cp -r ./data/. $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
 			<Mode after="always" />
 		</ExtraCommands>
+		<Unit filename="implementation/control/IControl.cpp" />
+		<Unit filename="implementation/control/controls.cpp" />
+		<Unit filename="implementation/control/impl/ColorControl.cpp" />
 		<Unit filename="implementation/gl/GLProgramBundle.cpp" />
+		<Unit filename="implementation/gui/GLCommon.cpp" />
 		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/MenuBarWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/ModelSelectorWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/TextureSelectorWidget.cpp" />
 		<Unit filename="implementation/gui/windows/EditorWindow.cpp" />
-		<Unit filename="implementation/gui/windows/GLCommon.cpp" />
 		<Unit filename="implementation/gui/windows/MainWindow.cpp" />
 		<Unit filename="implementation/gui/windows/ModelWindow.cpp" />
 		<Unit filename="implementation/gui/windows/subwindows/GLModelWindow.cpp" />
 		<Unit filename="implementation/gui/windows/subwindows/GLTextureWindow.cpp" />
 		<Unit filename="implementation/main.cpp" />
+		<Unit filename="interface/control/IControl.h" />
+		<Unit filename="interface/control/controls.h" />
+		<Unit filename="interface/control/impl/ColorControl.h" />
 		<Unit filename="interface/gl/GLProgramBundle.h" />
 		<Unit filename="interface/gui/GLCommon.h" />
 		<Unit filename="interface/gui/constants.h" />

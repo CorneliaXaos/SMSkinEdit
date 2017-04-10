@@ -1,12 +1,17 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Color_Chooser.H>
 #include <FL/Fl_Double_Window.H>
+#include <FL/Fl_Widget.H>
 
+#include "control/controls.h"
 #include "gui/constants.h"
 #include "gui/widgets/ActiveColorWidget.h"
 #include "gui/widgets/TextureSelectorWidget.h"
 #include "gui/windows/EditorWindow.h"
 #include "gui/windows/subwindows/GLTextureWindow.h"
+
+// namespace Declaration
+namespace controls = smskinedit::control::controls;
 
 namespace smskinedit {
     namespace gui {
@@ -25,7 +30,20 @@ namespace smskinedit {
 
             // Init _colorChooser
             _colorChooser = new Fl_Color_Chooser{0, 0, width, chooserHeight};
-            _colorChooser->rgb(1.0, 1.0, 1.0);
+            _colorChooser->rgb(0.0, 0.0, 0.0);
+            _colorChooser->callback([](Fl_Widget* widget, void*) {
+                Fl_Color_Chooser* colorChooser =
+                        reinterpret_cast<Fl_Color_Chooser*>(widget);
+                unsigned int color =
+                        (static_cast<int>(colorChooser->r() * 255) << 24) +
+                        (static_cast<int>(colorChooser->g() * 255) << 16) +
+                        (static_cast<int>(colorChooser->b() * 255) << 8);
+                if (controls::colorControl.isForegroundSelected()) {
+                    controls::colorControl.setForegroundColor(color);
+                } else {
+                    controls::colorControl.setBackgroundColor(color);
+                }
+            }, nullptr);
 
             // Init _activeColor
             _activeColor = new ActiveColorWidget{0, chooserHeight, width,
@@ -38,6 +56,19 @@ namespace smskinedit {
             // Init _textureWindow
             _textureWindow = new GLTextureWindow{0, chooserHeight +
                     ROW_HEIGHT() * 3, width, width};
+
+            // Add ColorChooser callback
+            controls::colorControl.addCallback("EditorWindow", [&]() {
+                Fl_Color color{};
+                if (controls::colorControl.isForegroundSelected()) {
+                    color = controls::colorControl.getForegroundColor();
+                } else {
+                    color = controls::colorControl.getBackgroundColor();
+                }
+                unsigned char r = 0, g = 0, b = 0;
+                Fl::get_color(color, r, g, b);
+                _colorChooser->rgb(r / 255.0F, g / 255.0F, b / 255.0F);
+            });
 
             // Finish Up
             end();

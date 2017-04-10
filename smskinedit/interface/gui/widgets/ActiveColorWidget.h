@@ -4,8 +4,12 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Group.H>
 
+#include "control/impl/ColorControl.h"
+
 //! Forward Declare Fl_Radio_Button
 class Fl_Radio_Button;
+
+using ColorControl = smskinedit::control::ColorControl;
 
 namespace smskinedit {
     namespace gui {
