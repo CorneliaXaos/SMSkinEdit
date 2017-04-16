@@ -17,10 +17,9 @@
 namespace smskinedit {
     namespace gui {
 
-        std::mutex mutex {};
-
         void glewInit(int event, Fl_Gl_Window* window) {
             static std::atomic<bool> initialized {false};
+            static std::mutex mutex{};
             if (initialized) return; // fast fail before synchronization
 
             std::lock_guard<std::mutex> lock {mutex};
