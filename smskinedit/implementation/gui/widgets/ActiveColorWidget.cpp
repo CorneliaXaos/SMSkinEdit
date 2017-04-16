@@ -7,9 +7,14 @@
 #include "gui/widgets/ActiveColorWidget.h"
 
 // Constants
-const char* labelFG = "Foreground";
-const char* labelBG = "Background";
+static const char* labelFG = "Foreground";
+static const char* labelBG = "Background";
+static const char* CALLBACK_ID = "ActiveColorWidget";
 
+// Using Declarations
+using EventFlag = smskinedit::control::EventFlag;
+
+// Namespace Shortenings
 namespace controls = smskinedit::control::controls;
 
 namespace smskinedit {
@@ -49,7 +54,8 @@ namespace smskinedit {
             }, nullptr);
 
             // Attach ColorControl callbacks
-            controls::colorControl.addCallback("ActiveColorWidget", [&]() {
+            controls::colorControl.addCallback(CALLBACK_ID,
+                    [&](smskinedit::control::EventFlag) { // ignore event
                 auto fgColor = controls::colorControl.getForegroundColor();
                 auto bgColor = controls::colorControl.getBackgroundColor();
                 _foregroundButton->color(fgColor, fgColor);
@@ -70,6 +76,7 @@ namespace smskinedit {
                 delete _backgroundButton;
                 _backgroundButton = nullptr;
             }
+            controls::colorControl.removeCallback(CALLBACK_ID);
         }
 
     }

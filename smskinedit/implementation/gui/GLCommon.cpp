@@ -12,6 +12,8 @@
     #include <GL/glew.h>
 #endif
 
+#include "gui/GLCommon.h"
+
 namespace smskinedit {
     namespace gui {
 

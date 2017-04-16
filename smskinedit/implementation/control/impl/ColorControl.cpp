@@ -5,7 +5,7 @@ namespace smskinedit {
 
         void ColorControl::setForegroundColor(unsigned int color) {
             _fgColor = color;
-            onControlUpdated();
+            onControlUpdated(ColorControl::FOREGROUND_SET);
         }
         unsigned int ColorControl::getForegroundColor() const {
             return _fgColor;
@@ -13,7 +13,7 @@ namespace smskinedit {
 
         void ColorControl::setBackgroundColor(unsigned int color) {
             _bgColor = color;
-            onControlUpdated();
+            onControlUpdated(ColorControl::BACKGROUND_SET);
         }
         unsigned int ColorControl::getBackgroundColor() const {
             return _bgColor;
@@ -21,7 +21,7 @@ namespace smskinedit {
 
         void ColorControl::setForegroundSelected(bool selected) {
             _fgSelected = selected;
-            onControlUpdated();
+            onControlUpdated(ColorControl::SELECTION_CHANGED);
         }
         bool ColorControl::isForegroundSelected() const {
             return _fgSelected;

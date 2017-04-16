@@ -6,6 +6,10 @@
 namespace smskinedit {
     namespace control {
 
+        /**
+         *  @brief An intermediary for controlling and using the
+         *  ActiveColorWidget.
+         */
         class ColorControl : public IControl {
 
             public:
@@ -25,6 +29,10 @@ namespace smskinedit {
 
                 void setForegroundSelected(bool);
                 bool isForegroundSelected() const;
+
+                static const EventFlag FOREGROUND_SET = EventFlag{0U};
+                static const EventFlag BACKGROUND_SET = EventFlag{1U};
+                static const EventFlag SELECTION_CHANGED = EventFlag{2U};
 
             private:
                 unsigned int _fgColor = 0x00000000, _bgColor = 0xFFFFFF00;

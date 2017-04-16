@@ -6,10 +6,10 @@
 #include "gui/widgets/ModelSelectorWidget.h"
 
 // Constants
-const char* labelTag = "Model:\t";
-const char* labelBody = "Body";
-const char* labelHead = "Head";
-const char* labelBoth = "Both";
+static const char* labelTag = "Model:\t";
+static const char* labelBody = "Body";
+static const char* labelHead = "Head";
+static const char* labelBoth = "Both";
 
 namespace smskinedit {
     namespace gui {

@@ -13,6 +13,9 @@
 // namespace Declaration
 namespace controls = smskinedit::control::controls;
 
+// constants
+static const char* CALLBACK_ID = "EditorWindow";
+
 namespace smskinedit {
     namespace gui {
 
@@ -58,16 +61,19 @@ namespace smskinedit {
                     ROW_HEIGHT() * 3, width, width};
 
             // Add ColorChooser callback
-            controls::colorControl.addCallback("EditorWindow", [&]() {
-                Fl_Color color{};
-                if (controls::colorControl.isForegroundSelected()) {
-                    color = controls::colorControl.getForegroundColor();
-                } else {
-                    color = controls::colorControl.getBackgroundColor();
+            controls::colorControl.addCallback(CALLBACK_ID,
+                    [&](smskinedit::control::EventFlag event) {
+                if (event == ColorControl::SELECTION_CHANGED) {
+                    Fl_Color color{};
+                    if (controls::colorControl.isForegroundSelected()) {
+                        color = controls::colorControl.getForegroundColor();
+                    } else {
+                        color = controls::colorControl.getBackgroundColor();
+                    }
+                    unsigned char r = 0, g = 0, b = 0;
+                    Fl::get_color(color, r, g, b);
+                    _colorChooser->rgb(r / 255.0F, g / 255.0F, b / 255.0F);
                 }
-                unsigned char r = 0, g = 0, b = 0;
-                Fl::get_color(color, r, g, b);
-                _colorChooser->rgb(r / 255.0F, g / 255.0F, b / 255.0F);
             });
 
             // Finish Up
@@ -90,6 +96,7 @@ namespace smskinedit {
                 delete _textureWindow;
                 _textureWindow = nullptr;
             }
+            controls::colorControl.removeCallback(CALLBACK_ID);
         }
 
         // FLTK Event Functions

@@ -17,9 +17,9 @@ namespace smskinedit {
         }
 
         // Protected Methods
-        void IControl::onControlUpdated() const {
+        void IControl::onControlUpdated(EventFlag event) const {
             for (auto it = _callbacks.begin(); it != _callbacks.end(); it++) {
-                it->second();
+                it->second(event);
             }
         }
 

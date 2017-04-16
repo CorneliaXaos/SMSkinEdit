@@ -7,7 +7,10 @@
 namespace smskinedit {
     namespace control {
 
-        using Callback = std::function<void ()>;
+        //! An "event flag"
+        using EventFlag = unsigned int;
+        //! Events will be control defined and signaled via an EventFlag
+        using Callback = std::function<void (EventFlag)>;
 
         /**
          *  @brief An interface for all controls within the software.
@@ -28,7 +31,7 @@ namespace smskinedit {
 
             protected:
                 //! Alert listeners that things have changed
-                void onControlUpdated() const;
+                void onControlUpdated(EventFlag) const;
 
             private:
                 mutable std::map<const char*, Callback> _callbacks;

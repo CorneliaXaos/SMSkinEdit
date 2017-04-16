@@ -6,10 +6,10 @@
 #include "gui/widgets/TextureSelectorWidget.h"
 
 // Constants
-const char* selectedBody = "B";
-const char* selectedHead = "H";
-const char* labelDiffuse = "Diffuse";
-const char* labelEmissive = "Emissive";
+static const char* selectedBody = "B";
+static const char* selectedHead = "H";
+static const char* labelDiffuse = "Diffuse";
+static const char* labelEmissive = "Emissive";
 
 namespace smskinedit {
     namespace gui {

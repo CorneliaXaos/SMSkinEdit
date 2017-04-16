@@ -80,6 +80,12 @@
 		<Unit filename="implementation/control/IControl.cpp" />
 		<Unit filename="implementation/control/controls.cpp" />
 		<Unit filename="implementation/control/impl/ColorControl.cpp" />
+		<Unit filename="implementation/control/impl/EditorControl.cpp" />
+		<Unit filename="implementation/control/impl/FileControl.cpp" />
+		<Unit filename="implementation/control/impl/LightingControl.cpp" />
+		<Unit filename="implementation/control/impl/ModelControl.cpp" />
+		<Unit filename="implementation/control/impl/TemplateControl.cpp" />
+		<Unit filename="implementation/control/impl/TextureControl.cpp" />
 		<Unit filename="implementation/gl/GLProgramBundle.cpp" />
 		<Unit filename="implementation/gui/GLCommon.cpp" />
 		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
@@ -95,6 +101,13 @@
 		<Unit filename="interface/control/IControl.h" />
 		<Unit filename="interface/control/controls.h" />
 		<Unit filename="interface/control/impl/ColorControl.h" />
+		<Unit filename="interface/control/impl/EditorControl.h" />
+		<Unit filename="interface/control/impl/FileControl.h" />
+		<Unit filename="interface/control/impl/LightingControl.h" />
+		<Unit filename="interface/control/impl/ModelControl.h" />
+		<Unit filename="interface/control/impl/TemplateControl.h" />
+		<Unit filename="interface/control/impl/TextureControl.h" />
+		<Unit filename="interface/enums.h" />
 		<Unit filename="interface/gl/GLProgramBundle.h" />
 		<Unit filename="interface/gui/GLCommon.h" />
 		<Unit filename="interface/gui/constants.h" />
