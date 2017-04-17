@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include "control/impl/TextureControl.h"
 #include "enums.h"
 
@@ -8,6 +10,7 @@ namespace smskinedit {
     namespace control {
 
         void TextureControl::setModelType(ModelType modelType) {
+            assert(modelType != ModelType::BOTH); // exclusive here
             _modelType = modelType;
             onControlUpdated(TextureControl::MODEL_TYPE_CHANGED);
         }

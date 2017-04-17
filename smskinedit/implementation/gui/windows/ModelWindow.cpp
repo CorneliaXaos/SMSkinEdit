@@ -1,17 +1,22 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Double_Window.H>
 #include <FL/Fl_Hor_Value_Slider.H>
+#include <FL/Fl_Widget.H>
 
+#include "control/controls.h"
 #include "gui/constants.h"
 #include "gui/widgets/ModelSelectorWidget.h"
 #include "gui/windows/ModelWindow.h"
 #include "gui/windows/subwindows/GLModelWindow.h"
 
 // Constants
-const int ONION_SKINNING_LABEL_PADDING = 5;
-const int ONION_SKINNING_LABEL_SIZE = 10;
-const int ONION_SKINNING_LABEL_TOTAL = ONION_SKINNING_LABEL_PADDING +
+static const int ONION_SKINNING_LABEL_PADDING = 5;
+static const int ONION_SKINNING_LABEL_SIZE = 10;
+static const int ONION_SKINNING_LABEL_TOTAL = ONION_SKINNING_LABEL_PADDING +
         ONION_SKINNING_LABEL_SIZE;
+
+// Namespace Shortenings
+namespace controls = smskinedit::control::controls;
 
 namespace smskinedit {
     namespace gui {
@@ -40,6 +45,12 @@ namespace smskinedit {
             _onionSkinningSlider->align(FL_ALIGN_BOTTOM);
             _onionSkinningSlider->visible_focus(false);
             _onionSkinningSlider->value(0.5);
+            _onionSkinningSlider->callback([](Fl_Widget* widget, void*) {
+                Fl_Hor_Value_Slider* slider =
+                        reinterpret_cast<Fl_Hor_Value_Slider*>(widget);
+                controls::templateControl.setOnionSkinningValue(
+                        slider->value());
+            }, nullptr);
 
             // Finish Up
             end();

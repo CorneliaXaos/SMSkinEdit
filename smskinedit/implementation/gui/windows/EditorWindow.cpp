@@ -13,6 +13,9 @@
 // namespace Declaration
 namespace controls = smskinedit::control::controls;
 
+// Using declarations
+using EventFlag = smskinedit::control::EventFlag;
+
 // constants
 static const char* CALLBACK_ID = "EditorWindow";
 
@@ -62,7 +65,7 @@ namespace smskinedit {
 
             // Add ColorChooser callback
             controls::colorControl.addCallback(CALLBACK_ID,
-                    [&](smskinedit::control::EventFlag event) {
+                    [&](EventFlag event) {
                 if (event == ColorControl::SELECTION_CHANGED) {
                     Fl_Color color{};
                     if (controls::colorControl.isForegroundSelected()) {

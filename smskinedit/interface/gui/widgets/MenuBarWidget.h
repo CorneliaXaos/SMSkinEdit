@@ -25,7 +25,7 @@ namespace smskinedit {
                 // TODO - enums and callback setters
 
                 //! Number of Menu Items
-                static const unsigned int MENU_ITEM_COUNT = 15;
+                static const unsigned int MENU_ITEM_COUNT = 16;
             private:
                 Fl_Menu_Item _items[MENU_ITEM_COUNT];
         };

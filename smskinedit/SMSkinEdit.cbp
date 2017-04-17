@@ -18,7 +18,9 @@
 				</Compiler>
 				<Linker>
 					<Add option="-pg" />
-					<Add option="`../submodules/FLTK/bin/debug/bin/fltk-config --use-gl --ldlibs`" />
+					<Add option="`../submodules/FLTK/bin/debug/bin/fltk-config --use-gl --use-images --ldlibs`" />
+					<Add option="-lpng" />
+					<Add option="-ljpeg" />
 					<Add library="../submodules/lodepng/bin/Debug/liblodepng.a" />
 				</Linker>
 			</Target>
@@ -34,7 +36,9 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="`../submodules/FLTK/bin/release/bin/fltk-config --use-gl --ldlibs`" />
+					<Add option="`../submodules/FLTK/bin/release/bin/fltk-config --use-gl --use-images --ldlibs`" />
+					<Add option="-lpng" />
+					<Add option="-ljpeg" />
 					<Add library="../submodules/lodepng/bin/Release/liblodepng.a" />
 				</Linker>
 			</Target>
@@ -120,6 +124,7 @@
 		<Unit filename="interface/gui/windows/ModelWindow.h" />
 		<Unit filename="interface/gui/windows/subwindows/GLModelWindow.h" />
 		<Unit filename="interface/gui/windows/subwindows/GLTextureWindow.h" />
+		<Unit filename="interface/main.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

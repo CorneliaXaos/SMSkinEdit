@@ -54,8 +54,7 @@ namespace smskinedit {
             }, nullptr);
 
             // Attach ColorControl callbacks
-            controls::colorControl.addCallback(CALLBACK_ID,
-                    [&](smskinedit::control::EventFlag) { // ignore event
+            controls::colorControl.addCallback(CALLBACK_ID, [&](EventFlag) {
                 auto fgColor = controls::colorControl.getForegroundColor();
                 auto bgColor = controls::colorControl.getBackgroundColor();
                 _foregroundButton->color(fgColor, fgColor);
