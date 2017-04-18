@@ -17,6 +17,8 @@
 namespace smskinedit {
     namespace gui {
 
+        static Fl_Gl_Window* contextWindow = nullptr;
+
         void glewInit(int event, Fl_Gl_Window* window) {
             static std::atomic<bool> initialized {false};
             static std::mutex mutex{};
@@ -31,6 +33,17 @@ namespace smskinedit {
                     Fl::warning("glewInit() failed returning %u", error);
                 }
             }
+        }
+
+        void setContextWindow(Fl_Gl_Window* window) {
+            contextWindow = window;
+        }
+        bool activateContext() {
+            if (contextWindow) {
+                contextWindow->make_current();
+                return true;
+            }
+            return false;
         }
 
     }

@@ -39,7 +39,7 @@ namespace controls = smskinedit::control::controls;
 namespace smskinedit {
     namespace gui {
 
-        // FileChooser Function
+        // Helper Function
         struct FileResult {
             std::string path {""};
             bool valid = false;
@@ -67,9 +67,21 @@ namespace smskinedit {
             }
             return result;
         }
+        //! Returns false if cancelled
+        static bool saveDialog() {
+            if (controls::fileControl.isFileModified()) {
+                // display a window asking if you want to save first
+                // if (/* should save code */) {
+                //     SaveCallback(nullptr, nullptr);
+                // }
+            }
+
+            return true;
+        }
 
         // Callbacks
         static void NewCallback(Fl_Widget*, void*) {
+            if (!saveDialog()) return;
             FileResult result = chooseDirectory(NEW_DIRECTORY,
                     Fl_Native_File_Chooser::BROWSE_SAVE_DIRECTORY);
             if (result.valid) {
@@ -88,15 +100,30 @@ namespace smskinedit {
                 }
 
                 // todo pending image management
+                bool success = false;
+
+                // update control
+                if (success) {
+                    controls::fileControl.setFileDirectory(result.path);
+                    controls::fileControl.setFileModified(false);
+                }
             }
         }
         static void OpenCallback(Fl_Widget*, void*) {
+            if (!saveDialog()) return;
             FileResult result = chooseDirectory(OPEN_DIRECTORY,
                     Fl_Native_File_Chooser::BROWSE_DIRECTORY);
             if (result.valid) {
                 // check to make sure directory contains the files we need
 
                 // todo pending image management
+                bool success = false;
+
+                // update control
+                if (success) {
+                    controls::fileControl.setFileDirectory(result.path);
+                    controls::fileControl.setFileModified(false);
+                }
             }
         }
         static void SaveCallback(Fl_Widget*, void*) {
@@ -106,12 +133,7 @@ namespace smskinedit {
             // todo pending future :P
         }
         static void QuitCallback(Fl_Widget*, void*) {
-            if (controls::fileControl.isFileModified()) {
-                // display a window asking if you want to save first
-                // if (/* should save code */) {
-                //     SaveCallback(nullptr, nullptr);
-                // }
-            }
+            if (!saveDialog()) return;
             window->hide();
         }
 

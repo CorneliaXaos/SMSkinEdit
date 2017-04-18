@@ -7,7 +7,14 @@
 namespace smskinedit {
     namespace gui {
 
+        //! Sets up GLEW for the application
         void glewInit(int, Fl_Gl_Window*);
+
+        //! Sets the window pointer to use as the context for OpenGL executed
+        //! outside of an Fl_Gl_Window
+        void setContextWindow(Fl_Gl_Window*);
+        //! Activates the context, if any
+        bool activateContext();
 
     }
 }
