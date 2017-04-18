@@ -32,6 +32,8 @@ namespace smskinedit {
             extern cy::GLRenderTexture<GL_TEXTURE_2D> bodyEmissive;
             extern cy::GLRenderTexture<GL_TEXTURE_2D> helmDiffuse;
             extern cy::GLRenderTexture<GL_TEXTURE_2D> helmEmissive;
+            extern cy::GLRenderTexture<GL_TEXTURE_2D> bodyTemplate;
+            extern cy::GLRenderTexture<GL_TEXTURE_2D> helmTemplate;
 
             //! Returns true if all the RenderTextures are initialized
             bool texturesReady();

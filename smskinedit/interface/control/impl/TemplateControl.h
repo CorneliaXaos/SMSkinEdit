@@ -28,7 +28,7 @@ namespace smskinedit {
                         EventFlag{0U};
 
             private:
-                float _onionSkinningVaue = 0.5F;
+                float _onionSkinningVaue = 1.0F;
         };
 
     }

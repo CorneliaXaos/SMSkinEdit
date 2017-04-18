@@ -9,8 +9,9 @@
 			<Target title="Debug">
 				<Option output="bin/Debug/SMSkinEdit" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
-				<Option type="0" />
+				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-pg" />
 					<Add option="-g" />
@@ -90,7 +91,8 @@
 		<Unit filename="implementation/control/impl/ModelControl.cpp" />
 		<Unit filename="implementation/control/impl/TemplateControl.cpp" />
 		<Unit filename="implementation/control/impl/TextureControl.cpp" />
-		<Unit filename="implementation/gl/GLProgramBundle.cpp" />
+		<Unit filename="implementation/gl/bundles/TextureBundle.cpp" />
+		<Unit filename="implementation/gl/helpers.cpp" />
 		<Unit filename="implementation/gl/textures.cpp" />
 		<Unit filename="implementation/gui/GLCommon.cpp" />
 		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
@@ -113,8 +115,8 @@
 		<Unit filename="interface/control/impl/TemplateControl.h" />
 		<Unit filename="interface/control/impl/TextureControl.h" />
 		<Unit filename="interface/enums.h" />
-		<Unit filename="interface/gl/GLProgramBundle.h" />
-		<Unit filename="interface/gl/SharedTextures.h" />
+		<Unit filename="interface/gl/bundles/TextureBundle.h" />
+		<Unit filename="interface/gl/helpers.h" />
 		<Unit filename="interface/gl/textures.h" />
 		<Unit filename="interface/gui/GLCommon.h" />
 		<Unit filename="interface/gui/constants.h" />

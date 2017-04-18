@@ -46,7 +46,7 @@ namespace smskinedit {
             _onionSkinningSlider->labelsize(ONION_SKINNING_LABEL_SIZE);
             _onionSkinningSlider->align(FL_ALIGN_BOTTOM);
             _onionSkinningSlider->visible_focus(false);
-            _onionSkinningSlider->value(0.5);
+            _onionSkinningSlider->value(1.0);
             _onionSkinningSlider->callback([](Fl_Widget* widget, void*) {
                 Fl_Hor_Value_Slider* slider =
                         reinterpret_cast<Fl_Hor_Value_Slider*>(widget);

@@ -12,6 +12,9 @@
     #include <GL/glew.h>
 #endif
 
+#include "gl/bundles/TextureBundle.h"
+
+using TextureBundle = smskinedit::gl::TextureBundle;
 
 namespace smskinedit {
     namespace gui {
@@ -31,7 +34,7 @@ namespace smskinedit {
 
                 //! No copying or moving
                 GLTextureWindow(const GLTextureWindow&) = delete;
-                GLTextureWindow& operator==(const GLTextureWindow&) = delete;
+                GLTextureWindow& operator=(const GLTextureWindow&) = delete;
                 GLTextureWindow(GLTextureWindow&&) = delete;
                 GLTextureWindow& operator=(GLTextureWindow&&) = delete;
 
@@ -39,7 +42,7 @@ namespace smskinedit {
                 int handle(int) override final;
 
             private:
-                // None, atm
+                TextureBundle* _textureBundle = nullptr;
         };
 
     }
