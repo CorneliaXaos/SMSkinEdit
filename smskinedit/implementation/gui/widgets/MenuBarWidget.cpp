@@ -12,6 +12,7 @@
 #include "control/controls.h"
 #include "control/impl/FileControl.h"
 #include "enums.h"
+#include "gl/textures.h"
 #include "gui/widgets/MenuBarWidget.h"
 #include "main.h"
 
@@ -35,6 +36,7 @@ using LightingType = smskinedit::enums::LightingType;
 
 // Namespace shortenings
 namespace controls = smskinedit::control::controls;
+namespace textures = smskinedit::gl::textures;
 
 namespace smskinedit {
     namespace gui {
@@ -99,8 +101,8 @@ namespace smskinedit {
                     output << source.rdbuf();
                 }
 
-                // todo pending image management
-                bool success = false;
+                // Load Textures
+                bool success = textures::loadTextures(result.path);
 
                 // update control
                 if (success) {
@@ -114,10 +116,8 @@ namespace smskinedit {
             FileResult result = chooseDirectory(OPEN_DIRECTORY,
                     Fl_Native_File_Chooser::BROWSE_DIRECTORY);
             if (result.valid) {
-                // check to make sure directory contains the files we need
-
-                // todo pending image management
-                bool success = false;
+                // Load Textures
+                bool success = textures::loadTextures(result.path);
 
                 // update control
                 if (success) {

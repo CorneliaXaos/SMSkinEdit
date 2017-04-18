@@ -5,6 +5,7 @@
 
 #include "control/controls.h"
 #include "gui/constants.h"
+#include "gui/GLCommon.h"
 #include "gui/widgets/ModelSelectorWidget.h"
 #include "gui/windows/ModelWindow.h"
 #include "gui/windows/subwindows/GLModelWindow.h"
@@ -36,6 +37,7 @@ namespace smskinedit {
             // Init _modelWindow
             _modelWindow = new GLModelWindow{0, ROW_HEIGHT(), width,
                     height - 2 * ROW_HEIGHT() - ONION_SKINNING_LABEL_TOTAL};
+            smskinedit::gui::setContextWindow(_modelWindow);
 
             // Init _onionSkinningSlider
             _onionSkinningSlider = new Fl_Hor_Value_Slider{0,
@@ -56,6 +58,8 @@ namespace smskinedit {
             end();
         }
         ModelWindow::~ModelWindow() {
+            smskinedit::gui::setContextWindow(nullptr);
+
             if (_modelWindow) {
                 delete _modelWindow;
                 _modelWindow = nullptr;

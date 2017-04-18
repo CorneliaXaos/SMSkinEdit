@@ -91,6 +91,7 @@
 		<Unit filename="implementation/control/impl/TemplateControl.cpp" />
 		<Unit filename="implementation/control/impl/TextureControl.cpp" />
 		<Unit filename="implementation/gl/GLProgramBundle.cpp" />
+		<Unit filename="implementation/gl/textures.cpp" />
 		<Unit filename="implementation/gui/GLCommon.cpp" />
 		<Unit filename="implementation/gui/widgets/ActiveColorWidget.cpp" />
 		<Unit filename="implementation/gui/widgets/MenuBarWidget.cpp" />
@@ -114,6 +115,7 @@
 		<Unit filename="interface/enums.h" />
 		<Unit filename="interface/gl/GLProgramBundle.h" />
 		<Unit filename="interface/gl/SharedTextures.h" />
+		<Unit filename="interface/gl/textures.h" />
 		<Unit filename="interface/gui/GLCommon.h" />
 		<Unit filename="interface/gui/constants.h" />
 		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />

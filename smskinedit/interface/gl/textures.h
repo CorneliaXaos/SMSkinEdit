@@ -3,7 +3,15 @@
 
 #include <string>
 
-#include <FL/gl.H>
+#if defined(__APPLE__)
+    #include <OpenGL/gl3.h> // defines OpenGL 3.0+ functions
+#else
+    #if defined(WIN32)
+        #define GLEW_STATIC 1
+    #endif
+    #include <GL/glew.h>
+#endif
+#include <FL/gl.h>
 #include "cyGL.h"
 
 namespace smskinedit {
@@ -20,10 +28,10 @@ namespace smskinedit {
         namespace textures {
 
             //! The textures
-            extern GLRenderTexture bodyDiffuse {};
-            extern GLRenderTexture bodyEmissive {};
-            extern GLRenderTexture helmDiffuse {};
-            extern GLRenderTextuer helmEmissive {};
+            extern cy::GLRenderTexture<GL_TEXTURE_2D> bodyDiffuse;
+            extern cy::GLRenderTexture<GL_TEXTURE_2D> bodyEmissive;
+            extern cy::GLRenderTexture<GL_TEXTURE_2D> helmDiffuse;
+            extern cy::GLRenderTexture<GL_TEXTURE_2D> helmEmissive;
 
             //! Returns true if all the RenderTextures are initialized
             bool texturesReady();
