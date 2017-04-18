@@ -78,7 +78,7 @@
 		<ExtraCommands>
 			<Add before="rm -rfd $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
 			<Add after="mkdir $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
-			<Add after="cp -r ./data/. $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
+			<Add after="cp -r ./SMSkinEdit_Data/. $(TARGET_OUTPUT_DIR)SMSkinEdit_Data" />
 			<Mode after="always" />
 		</ExtraCommands>
 		<Unit filename="implementation/control/IControl.cpp" />
@@ -113,6 +113,7 @@
 		<Unit filename="interface/control/impl/TextureControl.h" />
 		<Unit filename="interface/enums.h" />
 		<Unit filename="interface/gl/GLProgramBundle.h" />
+		<Unit filename="interface/gl/SharedTextures.h" />
 		<Unit filename="interface/gui/GLCommon.h" />
 		<Unit filename="interface/gui/constants.h" />
 		<Unit filename="interface/gui/widgets/ActiveColorWidget.h" />

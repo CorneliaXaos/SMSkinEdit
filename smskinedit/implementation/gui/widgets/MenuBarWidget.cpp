@@ -1,5 +1,6 @@
 #include <cassert>
 #include <cstdint>
+#include <fstream>
 #include <string>
 
 #include <FL/Fl.H>
@@ -18,6 +19,14 @@
 static const char* NEW_DIRECTORY = "Choose a New Save Directory";
 static const char* OPEN_DIRECTORY = "Choose an Existing Save Directory";
 static const char* CALLBACK_ID = "MenuBarWidget";
+static const char* FILE_ROOT = "SMSkinEdit_Data/Textures/empty/";
+static const char* FILES[] = {
+    "skin_main_diff.png",
+    "skin_main_em.png",
+    "skin_helmet_diff.png",
+    "skin_helmet_em.png"
+};
+static const int FILE_COUNT = 4;
 
 // Using declarations
 using EventFlag = smskinedit::control::EventFlag;
@@ -51,7 +60,7 @@ namespace smskinedit {
                     break;
                 default:
                     if (chooser.filename()) {
-                        result.path = std::string(chooser.filename());
+                        result.path = std::string{chooser.filename()};
                         result.valid = true;
                     }
                     break;
@@ -65,6 +74,18 @@ namespace smskinedit {
                     Fl_Native_File_Chooser::BROWSE_SAVE_DIRECTORY);
             if (result.valid) {
                 // copy blank files to directory of choice
+                for (int i = 0; i < FILE_COUNT; i++) {
+                    std::string sourceFile {FILE_ROOT};
+                    sourceFile.append(FILES[i]);
+                    std::ifstream source {sourceFile, std::ios::binary};
+
+                    std::string outputFile {result.path};
+                    outputFile.append("/");
+                    outputFile.append(FILES[i]);
+                    std::ofstream output {outputFile, std::ios::binary};
+
+                    output << source.rdbuf();
+                }
 
                 // todo pending image management
             }
